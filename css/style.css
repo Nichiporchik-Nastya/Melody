@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+    url("../fonts/BebasNeueRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*{
+	box-sizing: border-box /*позволяет правильно считать ширину и высоту элементов*/;
+}
+header{
+	background-color: #635854;
+	padding: 12px 0px;
+	border-bottom: 4px solid #3596F5;
+	color: #fff;
+}
+body{
+	font-family: 'Roboto';
+
+	font-size: 17px;
+	line-height: 20px;
+}
+.navbar{
+	max-width: 1280px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navbar_menu{
+	display: flex;
+	text-align: center;
+	font-weight: bold;
+}
+.navbar_menu > li{
+	margin: 0px 40px;
+}
+.navbar_menu > li:hover{
+	background-color: #3596F5;
+}
+.navbar_link{
+	text-decoration: none;
+	color: inherit;
+}
+.navbar_contacts{
+	text-align: right; /*выравнивание по правому краю*/
+}
+.navbar_contacts>span{
+	display: block;
+	margin-bottom: 4px;
+	font-size: 14px;
+	line-height: 16px;
+}
+.navbar_phone{
+	font-size: 17px;
+	line-height: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+}
+
+/*стили элементов страницы*/
+
+main{
+	max-width: 1280px;
+	margin: auto;
+	padding-top: 54px;
+	display: flex;
+	margin-bottom: 100px;
+}
+.main_title{
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: normal;
+	font-size: 37px;
+	line-height: 44px;
+	color: #635854;
+}
+.main_info{
+	flex-grow: 1; /*элемент займёт всё свободное место*/
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.select_floors path{
+	opacity: 0;
+	cursor: pointer;
+	mix-blend-mode: hard-light;
+}
+.select_floors path:hover{
+	opacity: 1;
+}
+path.current_floor{
+	opacity: 1;
+}
+.counter_group{
+	display: flex;
+	flex-direction: column; /*fxdc*/ /*элементы располагаются друг под другом колонкой*/
+	align-items: center;
+}
+.counter_button{
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+.counter_arrow_down{
+	transform: rotate(180deg);
+}
+.floor_counter{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 110px;
+	color: #635854;
+	line-height: 150px;
+}
+.button_primery{
+	padding: 16px 36px;
+	background-color: #3596F5;
+	color: #fff;
+	border-radius: 6px;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 19px;
+	border: none;
+	cursor: pointer;
+}
+
+/*стили модального окна*/
+
+.modal{
+	opacity: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0);
+	transition: opacity .2s;
+}
+.is-open{
+	opacity: 1;
+	transform: scale(1);
+}
+.modal_dialog{
+	max-width: 1000px;
+	min-height: 565px;
+	background-color: #fff;
+	flex-grow: 1;
+	opacity: 0;
+	display: flex;
+	position: relative;
+	transform: translateY(-10%);
+	transition: transform .2s, opacity .2s;
+	transition-delay: .2s;
+}
+.is-open > .modal_dialog{
+	opacity: 1;
+	transform: translateY(0);
+}
+.modal_image{
+	background-color: #EBEBEB;
+	width: 60%;
+	text-align: center;
+	padding: 50px;
+}
+.modal_title{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 24px;
+	line-height: 29px;
+	margin-bottom: 25px;
+}
+.modal_info{
+	width: 40%;
+	padding: 50px 40px;
+}
+.flat_list{
+	margin-top: 55px;
+}
+.flat_item{
+	margin-bottom: 10px;
+}
+.flat_link{
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 19px;
+	color: #635854;
+	text-decoration: none;
+}
+.flat_link:hover{
+	color: #3596f5;
+	text-decoration: underline;
+}
+.modal_p{
+	font-family: Roboto;
+	font-style: italic;
+	font-size: 16px;
+	line-height: 19px;
+	margin-top: 56px;
+	color: #635854;
+}
+.modal_close_button{
+	position: absolute;
+	top: 38px;
+	right: 27px;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+.flats path{
+	opacity: 0;
+	mix-blend-mode: hard-light;
+	cursor: pointer;
+}
+.flats path:hover{
+	opacity: 1;
+}
+
+/*стили футера*/
+
+footer{
+	background-color: #D7D7D7;
+	padding: 12px 0px;
+	border-top: 4px solid #3596F5;
+	color: #635854;
+}
+.footer_content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 50px 80px;
+}
+.footer_contacts>span{
+	display: block;
+	margin-bottom: 4px;
+	font-size: 14px;
+	line-height: 16px;
+}
+.footer_phone{
+	font-size: 17px;
+	line-height: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	color: inherit;
+}
+.copywrite{
+	display: flex;
+}
+.footer_link{
+	font-size: 16px;
+	line-height: 10px;
+	color: inherit;
+	margin-right: 20px;
+	text-decoration: none;
+	border-bottom: 1px solid #635854;
+}
+.social_media>svg{
+	width: 25px;
+	height: 25px;
+	align-items: center;
+	justify-content: center;
+}
